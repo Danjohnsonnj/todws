@@ -1,0 +1,55 @@
+<div id="projectPages" >
+  {.section collection}
+    {.repeated section collections}
+      <div class="project {typeLabel}-project" data-url="{fullUrl}" {.if passwordProtected}data-type-protected{.end}>
+      {.collectionTypeNameEquals? gallery}
+        <div class="project-meta">
+          {.section title}<h2 class="project-title">{@}</h2>{.end}
+          {.section description}<div class="project-description">{@}</div>{.end}
+        </div>
+        <div class="image-list">
+        {.repeated section items}
+          <div class="image">
+            {.image?}<img {@|image-meta} class="loading" data-load="false"/>{.end}
+            {.video?}{@|video load-false}{.end}
+            <div class="image-meta">
+              {.section title}<span class="image-title"><strong>{@}</strong></span>{.end}
+              {.section body}<span class="image-desc">{@}</span>{.end}
+            </div>
+          </div>
+        {.end}
+        </div>
+      {.or}
+        <!-- Will be fetched on-demand -->
+      {.end}
+      </div>
+    {.end}
+  {.end}
+
+  <div class="project-controls">
+    <div>
+      <div id="projectNav"><span class="prev-project">prev</span> / <span class="next-project">next</span></div>
+      <a href="#">Back to {collection.title}</a>
+    </div>
+  </div>
+
+</div>
+
+<div id="projectThumbs">
+  <div class="wrapper" data-collection-id="{collection.id}">
+    {.section collection}
+      {.repeated section collections}
+      {.if mainImage}
+        <a class="project {.section tags}{.repeated section @}tag-{@}{.end}{.end}" href="{fullUrl}" >
+          <div>
+            <div class="project-image"><div class="intrinsic"><div class="content-fill">{.section mainImage}<img {@|image-meta} data-load="false"/>{.end}</div></div><div class="project-item-count">{itemCount}</div></div>
+            {.section title}<div class="project-title">{@}</div>{.end}
+          </div>
+        </a>
+      {.end}
+      {.end}
+    {.end}
+  </div>
+</div>
+
+

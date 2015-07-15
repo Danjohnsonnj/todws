@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  {.if template.mobileStylesEnabled}
+  <meta name="viewport" content="initial-scale=1">
+  {.end}
+  {squarespace-headers}
+  <squarespace:script src="dynamic-data.js" combo="false"/>
+  <squarespace:script src="site.js" combo="false"/>
+</head>
+{.if template.mobileStylesEnabled}{.or}<!-- Mobile Styles Disabled -->{.end}
+<body class="{squarespace.page-classes}{.section website}{.section logoImageUrl} logo-image{.or} site-title{.end}{.end}" id="{squarespace.page-id}">
+
+  <div id="canvas">
+
+    <div id="mobileNav" class="">
+      <div class="wrapper">
+        <squarespace:navigation navigationId="mainNav" template="mobile-navigation" />
+      </div>
+    </div>
+    <div id="mobileMenuLink"><a>Menu</a></div>
+
+    <header id="header" class="clear">
+
+    {.section website}
+
+      <div id="upper-logo">
+        <h1 class="logo" data-content-field="site-title">
+          <a href="/">{.if logoImageUrl}<img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />{.or}{siteTitle}{.end}</a>
+        </h1>
+      </div>
+      <script>
+      if (parseInt(Y.one('body').getComputedStyle('width'),10) <= 640) {
+        Y.use('squarespace-ui-base', function(Y) {
+          Y.one("#upper-logo .logo").plug(Y.Squarespace.TextShrink, {
+            parentEl: Y.one('#upper-logo')
+          });
+        });
+      }
+      </script>
+
+      {.section location}
+      <div class="site-info">
+        {.if addressLine1}<div class="site-address">{addressLine1}</div>{.or}<div class="site-address">Street Address</div>{.end}
+        {.if addressLine2}<div class="site-city-state">{addressLine2}</div>{.or}<div class="site-city-state">City, State, Zip</div>{.end}
+        {.if websiteSettings.contactPhoneNumber}<div class="site-phone">{websiteSettings.contactPhoneNumber}</div>{.or}<div class="site-phone">Phone Number</div>{.end}
+      </div>
+      {.or}
+      <div class="site-info">
+        <div class="site-address">Street Address</div>
+        <div class="site-city-state">City, State, Zip</div>
+        <div class="site-phone">Phone Number</div>
+      </div>
+      {.end}
+
+      <div class="site-tag-line">
+        {.if siteTagLine}<span>{siteTagLine}</span>{.end}
+      </div>
+
+      <div class="custom-info">
+        <squarespace:block-field id="customInfoBlock" columns="12" label="Header Subtitle: Custom Content" />
+      </div>
+
+      <div id="lower-logo">
+        <h1 class="logo" data-content-field="site-title"><a href="/">{.if logoImageUrl}<img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />{.or}{siteTitle}{.end}</a></h1>
+      </div>
+      <script>
+        Y.use('squarespace-ui-base', function(Y) {
+          Y.one("#lower-logo .logo").plug(Y.Squarespace.TextShrink, {
+            parentEl: Y.one('#lower-logo')
+          });
+        });
+      </script>
+
+    {.end}
+      <squarespace:navigation navigationId="mainNav" template="navigation" />
+
+    </header>
+
+    <div class="page-divider top-divider"></div>
+
+    <!-- // page image or divider -->
+    {.section collection}
+      {.section mainImage}
+      <div id="hero">
+        <div class="page-image" data-collection-id="{collection.id}" data-edit-main-image="Banner" data-annotation-alignment="bottom left">
+          <div class="image-wrapper"><img {@|image-meta} /></div>
+          <div class="wrapper">
+            <h1 class="page-title">{collection.title}</h1>
+            <div class="page-description">{collection.description}</div>
+          </div>
+        </div>
+      </div>
+      {.end}
+    {.end}
+
+    <section id="page" class="clear" role="main" data-content-field="main-content" data-collection-id="{collection.id}" data-collection-id="{collection.id}"{.equal? collection.typeName "page"} data-edit-main-image="Banner"{.end}{.equal? collection.typeName "index"} data-edit-main-image="Banner"{.end}{.equal? collection.typeName "events"} data-edit-main-image="Banner"{.end}{.equal? collection.typeName "blog"} data-edit-main-image="Banner"{.end} >
+
+      <!-- // CATEGORY NAV -->
+      {.section collection}{.equal? typeName "products"}{.section categories}
+      <div id="categoryNav" role="navigation">
+        <input type="checkbox" name="category-nav-toggle" id="categoryNavToggle" class="category-nav-toggle hidden" />
+        <label for="categoryNavToggle" class="category-nav-toggle-label" onclick></label>
+        <nav class="category-nav">
+          <ul class="nav category-nav-links">
+            <li class="filter"><a>Filter{.if categoryFilter}: {categoryFilter}{.end}</a></li>
+            <li{.if categoryFilter}{.or} class="active-link all"{.end}><a href="{fullUrl}">All</a></li>
+          {.repeated section @}
+            <li{.equal? categoryFilter @} class="active-link"{.end}><a href="{fullUrl}?category={@|url-encode}">{@}</a></li>
+          {.end}
+          </ul>
+        </nav>
+      </div>
+      {.end}{.end}{.end}
+
+      {squarespace.main-content}
+
+    </section>
+
+    <squarespace:block-field id="{squarespace.page-id}" columns="12" label="{collection.title} Footer Content" />
+
+    <!-- <div class="page-divider bottom-divider"></div> -->
+
+    <div class="info-footer-wrapper clear">
+      <div class="info-footer">
+      <squarespace:block-field id="infoFooterBlock" columns="12" label="Info Footer Content" />
+      {.section website}
+        {.if socialAccounts}
+        <div id="socialLinks" class="social-links" data-content-field="connected-accounts">
+          {.repeated section socialAccounts}<a{.if profileUrl} href="{profileUrl}" target="_blank"{.or} title="{screenname}"{.end} class="social-{serviceName}"></a>{.end}
+        </div>
+        {.end}
+      {.end}
+      </div>
+    </div>
+
+    <footer id="footer" class="clear">
+      <squarespace:block-field id="footerBlock" columns="12" label="Footer Content" />
+    </footer>
+
+  </div>
+
+  <div></div>
+
+  {squarespace-footers}
+
+{.if template.mobileStylesEnabled}{.or}
+  <script>
+    Y.use('node', function() {
+      Y.on('domready', function() {
+        var move;
+        Y.all('.subnav a').each(function(a) {
+          a.on('touchstart', function() {
+            move = false;
+          });
+          a.on('touchmove', function() {
+            move = true;
+          });
+          a.on('touchend', function() {
+            if (move === false) {
+              window.location = a.getAttribute('href');
+            }
+          });
+        });
+      });
+    });
+  </script>
+{.end}
+
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+
+/* cache busting xx */
+
+// Montauk Tweaks
+
+/* BLOCK SPECIFIC STYLES (SUMMARY, ETC.)
+---------------------------------------------------*/
+
+// tweak: { "category" : "Summary Block", "title" : "Summary Block Title Font", "type" : "font", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
+.summary-heading-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+// tweak: { "category" : "Summary Block", "title" : "Summary Block Title Color", "type" : "color", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
+@summaryHeadingColor: #666;
+
+
+/* Products */
+
+// tweak: { "category" : "Products", "type" : "checkbox", "title" : "Show Products Category Navigation", "label" : "Show Category Navigation", "target" : ".collection-type-products #categoryNav", "showOnlyWhenPresent" : ".collection-type-products", "active" : "false" }
+
+
+
+/* AUTO-CATEGORIZED - DO NOT ADD NEW TWEAKS HERE
+---------------------------------------------------*/
+
+// tweak: { "type" : "color", "title" : "Site Background", "target" : "body" }
+@background: #fff;
+
+// tweak: { "type" : "image", "title" : "Site Background Image", "target" : "body" }
+.bg-image {
+  background-image: none;
+  background-position: top left;
+  background-size: auto;
+  background-attachment: scroll;
+  background-repeat: repeat;
+}
+
+// tweak: { "type" : "color", "title" : "Canvas Background", "target" : "#canvas" }
+@canvasBackground: #fff;
+
+// tweak: { "type" : "color", "title" : "Site Title Color", "target" : "#header, h1.logo" }
+@siteTitleColor: #222;
+
+// tweak: { "type" : "color", "title" : "Site Title (Hover) Color", "target" : "#header, h1.logo" }
+@siteTitleHoverColor: #444;
+
+// tweak: { "type" : "color", "title" : "Site Subtitle Color", "target" : ".site-info, .site-tag-line, .custom-info" }
+@subtitleColor: #ddd;
+
+// tweak: { "type" : "color", "title" : "Navigation Color", "target" : "#header, .main-nav:not(.mobileNav) > ul > li" }
+@navColor: #999;
+
+// tweak: { "type" : "color", "title" : "Navigation (Hover) Color", "target" : "#header, .main-nav:not(.mobileNav) > ul > li" }
+@navHoverColor: #111;
+
+// tweak: { "type" : "color", "title" : "Navigation (Active) Color", "target" : "#header, .main-nav:not(.mobileNav) > ul > li" }
+@navActiveColor: #111;
+
+// tweak: { "type" : "color", "title" : "Heading 1 Color", "target" : ".active-project h1:not(.logo), .collection-type-blog h1:not(.logo), .collection-type-page h1:not(.logo)" }
+@heading1Color: #222;
+
+// tweak: { "type" : "color", "title" : "Heading 2 Color", "target" : ".active-project h2, .collection-type-blog h2, .collection-type-page h2" }
+@heading2Color: #222;
+
+// tweak: { "type" : "color", "title" : "Heading 3 Color", "target" : ".active-project h3, .collection-type-blog h3, .collection-type-page h3" }
+@heading3Color: #222;
+
+// tweak: { "type" : "color", "title" : "Text Color", "target" : ".hentry, #page, #footer, .active-project .project-meta" }
+@bodyTextColor: #777;
+
+// tweak: { "type" : "color", "title" : "Body Link Color", "target" : "body" }
+@linkColor: #111;
+
+// tweak: { "type" : "color", "title" : "Body Link (Hover) Color", "target" : "body" }
+@linkHoverColor: #444;
+
+// tweak: { "type" : "color", "title" : "Index Thumb Title Color", "target" : "#projectThumbs .project-title", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+@indexThumbTitles: #999;
+
+// tweak: { "type" : "color", "title" : "Index Thumb Background Color", "target" : "#projectThumbs .project-image", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+@indexThumbBackground: #eee;
+
+// tweak: { "type" : "color", "title" : "Blog Meta Color", "target" : ".hentry .meta, .hentry .meta-row" }
+@metaDataColor: #333;
+
+// tweak: { "type" : "color", "title" : "Page Border Color", "target" : "#page, .page-divider" }
+@pageBorderColor: #ddd;
+
+// tweak: { "type" : "color", "title" : "Social Icon Color", "target" : "#socialLinks", "showOnlyWhenPresent" : "#socialLinks" }
+@socialIconColor: #333;
+
+
+// tweak: { "type" : "font", "title" : "Site Title", "target" : "#header, h1.logo" }
+.site-title-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2em;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+// tweak: { "type" : "font", "title" : "Site Subtitle", "target" : ".site-info, .site-tag-line, .custom-info" }
+.site-subtitle-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 2.0em;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+// tweak: { "type" : "font", "title" : "Navigation", "target" : "#header, .main-nav:not(.mobileNav) > ul > li" }
+.nav-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+@nav-font-font-size: 12px;
+@nav-font-line-height: 1.6em;
+
+// tweak: { "type" : "font", "title" : "Body Text", "target" : "#page, .active-project .project-meta", "loadAllVariants" : "true" }
+.body-font {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.8em;
+  font-size: 13px;
+  text-transform: none;
+  text-decoration: none;
+}
+
+// tweak: { "type" : "font", "title" : "Blog Post Title", "target" : ".collection-type-blog h1:not(.logo)", "category" : "Blog Styles", "showOnlyWhenPresent" : ".collection-type-blog" }
+.blog-title-font {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.2em;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+// tweak: { "type" : "font", "title" : "Page Title", "target" : "#hero, .page-title" }
+.title-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.2em;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+// tweak: { "type" : "font", "title" : "Page Description", "target" : "#hero, .page-description", "loadAllVariants" : "true" }
+.description-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 2em;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+// tweak: { "type" : "font", "title" : "Heading 1", "target" : ".active-project h1:not(.logo), .collection-type-blog h1:not(.logo), .collection-type-page h1:not(.logo)", "loadAllVariants" : "true" }
+.heading-1-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.2em;
+  font-size: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+// tweak: { "type" : "font", "title" : "Heading 2", "target" : ".active-project h2, .collection-type-blog h2, .collection-type-page h2", "loadAllVariants" : "true" }
+.heading-2-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.4em;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+// tweak: { "type" : "font", "title" : "Heading 3", "target" : ".active-project h3, .collection-type-blog h3, .collection-type-page h3", "loadAllVariants" : "true" }
+.heading-3-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+// tweak: { "type" : "font", "title" : "Footer Text", "target" : "#footer", "loadAllVariants" : "true" }
+.footer-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+// tweak: { "type" : "font", "title" : "Index Thumb Titles", "target" : "#projectThumbs .project-title", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+.thumb-title-font {
+  font-family: Varela Round, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+// tweak: { "type" : "value", "title" : "Site Width", "min" : 600, "max" : 1200, "step" : 10, "target" : "#canvas", "property" : "width" }
+@siteWidth: 1100px;
+
+// tweak: { "type" : "value", "title" : "Page Content Width", "min" : 50, "max" : 100, "target" : ".collection-type-page #page", "property" : "width" }
+@contentWidth: 70%;
+
+// tweak: { "type" : "value", "title" : "Index Sidebar Width", "min" : 100, "max" : 600, "step" : 5, "target" : ".active-project .project-meta", "property" : "width", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+@indexSidebarWidth: 400px;
+
+// tweak: { "type" : "value", "title" : "Blog Page Width", "min" : 640, "max" : 1200, "target" : ".collection-type-blog .article-list", "property" : "width", "category" : "Blog Styles", "showOnlyWhenPresent" : ".collection-type-blog.blog-layout-center" }
+@blogPageWidth: 960px;
+
+// tweak: { "type" : "value", "title" : "Blog Sidebar Width", "min" : 100, "max" : 600, "step" : 5, "target" : ".collection-type-blog #sidebar", "property" : "width", "category" : "Blog Styles", "showOnlyWhenPresent" : ".collection-type-blog.blog-layout-left-sidebar, .collection-type-blog.blog-layout-right-sidebar" }
+@blogSidebarWidth: 350px;
+
+// tweak: { "type" : "value", "title" : "Blog Post Spacing", "min" : 30, "max" : 200, "target" : ".collection-type-blog .hentry", "property" : "margin-top", "category" : "Blog Styles", "showOnlyWhenPresent" : ".collection-type-blog" }
+@postPadding: 80px;
+
+// tweak: { "type" : "value", "title" : "Canvas Padding", "min" : 20, "max" : 100, "step" : 5, "target" : "#canvas", "property" : [ "padding-top", "padding-right", "padding-bottom", "padding-left" ], "js" : "true" }
+@outerPadding: 100px;
+
+// tweak: { "type" : "value", "title" : "Top Padding", "min" : 0, "max" : 100, "step" : 5, "target" : "#canvas", "property" : ["margin-top", "margin-bottom"], "condition" : { "Canvas Style": [ "Normal" ] }, "js" : "true" }
+@topPadding: 80px;
+
+// tweak: { "type" : "value", "title" : "Navigation Link Spacing", "min" : 10, "max" : 100, "target" : ".main-nav:not(.mobileNav) > ul > li", "property" : "margin-left" }
+@navPadding: 30px;
+
+// tweak: { "type" : "value", "title" : "Header Spacing", "min" : 0, "max" : 100, "target" : "#header, .top-divider", "property" : "margin-top" }
+@headerPadding: 50px;
+
+// tweak: { "type" : "value", "title" : "Page Padding", "min" : 20, "max" : 100, "target" : "#page, #hero", "property" : ["padding-top", "padding-bottom"], "js" : "true" }
+@pagePadding: 80px;
+
+// tweak: { "type" : "value", "title" : "Footer Padding", "min" : 20, "max" : 100, "target" : "#footer", "property" : ["margin-top", "margin-bottom"] }
+@footerPadding: 50px;
+
+// tweak: { "type" : "value", "title" : "Logo Size (Max)", "min" : 40, "max" : 300, "target" : ".logo-image .logo", "property" : "height" }
+@logoSize: 100px;
+
+// tweak: { "type" : "value", "title" : "Thumbnails Per Row", "min" : 1, "max" : 6, "target" : "#projectThumbs .project-image", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+@TPerRow: 3;
+
+// tweak: { "type" : "value", "title" : "Thumbnail Ratio", "min" : 20, "max" : 200, "target" : "#projectThumbs .project-image", "property" : "height", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+@TRatio: 80;
+
+// tweak: { "type" : "value", "title" : "Thumbnail Padding", "min" : 0, "max" : 8, "step" : 0.1, "target" : "#projectThumbs .project-image", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+@TGutter: 5.5%;
+
+// tweak: { "type" : "value", "title" : "Thumbnail Opacity", "min" : 0, "max" : 100, "target" : "#projectThumbs .project-image", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+@thumbOpacity: 100;
+
+// tweak: { "type" : "value", "title" : "Thumbnail Hover Opacity", "min" : 0, "max" : 100, "target" : "#projectThumbs .project-image", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+@thumbHoverOpacity: 80;
+
+// tweak: { "type" : "value", "title" : "Social Icon Size", "min" :16, "max" :48, "target" : "#socialLinks", "showOnlyWhenPresent" : "#socialLinks" }
+@socialIconSize:30px;
+
+
+
+
+// tweak: { "type" : "dropdown", "title" : "Page Borders", "options" : [ "Thick", "Thin", "None" ], "default" : "Thick", "target" : "#canvas" }
+
+// tweak: { "type" : "dropdown", "title" : "Canvas Style", "options" : [ "Normal", "Masthead Logo Right", "Masthead Logo Left" ], "default" : "Normal", "target" : "#header, #canvas" }
+
+// tweak: { "type" : "checkbox", "title" : "Stack Navigation", "active" : "false", "target" : "#topNav", "condition" : { "Canvas Style": [ "Masthead Logo Right", "Masthead Logo Left" ] } }
+
+// tweak: { "type" : "dropdown", "title" : "Header Subtitle", "options" : [ "Address", "Tag Line", "Custom", "None" ], "default" : "Address", "target" : ".site-info, .site-tag-line, .custom-info" }
+
+// tweak: { "type" : "dropdown", "title" : "Banner Alignment", "options" : [ "Center", "Right", "Left" ], "default" : "Center", "target" : "#hero" }
+
+// tweak: { "type" : "dropdown", "title" : "Blog Layout", "options" : [ "Center", "Right Sidebar", "Left Sidebar" ], "default" : "Center", "target" : "#canvas, #page", "category" : "Blog Styles", "showOnlyWhenPresent" : ".collection-type-blog" }
+
+// tweak: { "type" : "dropdown", "title" : "Project Layout", "options" : [ "Left Sidebar", "Right Sidebar" ], "default" : "Left Sidebar", "target" : "#projectPages, .project", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+
+// tweak: { "type" : "dropdown", "title" : "Thumbnails on Open Page", "options" : [ "Show All", "Hide Active", "Hide All" ], "target" : "#projectThumbs .project-image", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+
+// tweak: { "type" : "dropdown", "title" : "Social Icon Style", "options" : [ "Normal", "Round", "Square" ], "default" : "Round", "target" : "#socialLinks", "showOnlyWhenPresent" : "#socialLinks" }
+
+// tweak: { "type" : "checkbox", "title" : "Hide Social Icons", "active" : "false", "target" : "#socialLinks", "showOnlyWhenPresent" : "#socialLinks" }
+
+// tweak: { "type" : "checkbox", "title" : "Hide Info Footer", "active" : "false", "target" : ".info-footer-wrapper" }
+
+// tweak: { "type" : "checkbox", "title" : "Hide Page Banner", "active" : "false", "target" : "#hero" }
+
+// tweak: { "type" : "checkbox", "title" : "Hide Page Title", "target" : "#hero, .page-title", "active" : "true" }
+
+// tweak: { "type" : "checkbox", "title" : "Hide Page Title Underline", "target" : "#hero, .page-title", "active" : "false" }
+
+// tweak: { "type" : "checkbox", "title" : "Hide Thumbnail Titles", "active" : "false", "target" : "#projectThumbs .project-image", "category" : "Index Styles", "showOnlyWhenPresent" : "#projectPages, #projectThumbs" }
+
+// tweak: { "type" : "checkbox", "title" : "Hide Article Author", "active" : "true", "target" : "article header", "category" : "Blog Styles", "showOnlyWhenPresent" : ".collection-type-blog" }
+

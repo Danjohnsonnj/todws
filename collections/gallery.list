@@ -1,0 +1,27 @@
+<div id="projectPages">
+
+  <div class="project gallery-project">
+    
+    {.section collection}
+      <div class="project-meta">
+        {.section title}<h2 class="project-title">{@}</h2>{.end}
+        {.section description}<div class="project-description">{@}</div>{.end}
+      </div>
+    {.end}
+
+    <div class="image-list">
+    {.repeated section items}
+      <div class="image">
+        {.image?}<img {@|image-meta} class="loading"/>{.end}
+        {.video?}{@|video}{.end}
+        <div class="image-meta">
+          {.section title}<p class="image-title"><strong>{@}</strong></p>{.end}
+          {.section body}<div class="image-desc">{@}</div>{.end}
+        </div>
+      </div>
+    {.end}
+    </div>
+
+  </div>
+
+</div>
