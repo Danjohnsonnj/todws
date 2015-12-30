@@ -75,12 +75,12 @@
 
     </header>
 
-    <div class="page-divider top-divider"></div>
-      
-    <div class="site-tag-line">
-      {.if siteTagLine}<span>{siteTagLine}</span>{.end}
+    <div class="page-divider top-divider">
+      <div class="site-tag-line">
+        {.if siteTagLine}<span>{siteTagLine}</span>{.end}
+      </div>
     </div>
-    
+      
     <!-- // page image or divider -->
     {.section collection}
       {.section mainImage}
