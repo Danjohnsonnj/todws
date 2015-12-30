@@ -77,7 +77,9 @@
 
     <div class="page-divider top-divider">
       <div class="site-tag-line">
-        {.if siteTagLine}<span>{siteTagLine}</span>{.end}
+        {.section website}
+          {.if siteTagLine}<span>{siteTagLine}</span>{.end}
+        {.end}
       </div>
     </div>
       
