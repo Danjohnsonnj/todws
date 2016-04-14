@@ -133,7 +133,8 @@ nav ul, nav ol { margin: 0; }
 #categoryNav nav ul { .nav-font; }
 #hero .page-title { .title-font; }
 
-.collection-type-blog article .entry-title { .blog-title-font; }
+.collection-type-blog article .entry-title,
+div[data-collection-type='schedule'] article .entry-title { .blog-title-font; }
 
 #footer {
   p, ul, ol {.footer-font;}
@@ -598,7 +599,8 @@ nav ul, nav ol { margin: 0; }
 
 // Blog
 
-.collection-type-blog {
+.collection-type-blog,
+div[data-collection-type='schedule'] {
 
   .article-list { width: auto; margin-left: auto; margin-right: auto; }
 
@@ -1124,4 +1126,3 @@ img[data-src]:not([src]) { opacity: 0; }
     }
   }
 }
-
