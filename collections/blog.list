@@ -1,7 +1,6 @@
 <div class="article-list hfeed">
 
 {.repeated section items}
-
   <article class="{@|item-classes}" id="article-{id}" data-item-id="{id}">
 
     <!--POST HEADER-->
@@ -26,15 +25,17 @@
       <div class="special-content">{@}</div>
     {.end}
 
-    <!--POST BODY-->
+    {.equal? @index 1}
+      <!--POST BODY-->
 
-    {.excerpt?}
-      <div class="body entry-content">{excerpt} <a class="read-more" href="{fullUrl}">Read More</a></div>
-    {.or}
-      {.section body}<div class="body entry-content">{@}</div>{.end}
-      {.passthrough?}{.or}{.section sourceUrl}<div class="body entry-source">Source: <a href="{sourceUrl}" target="_blank">{sourceUrl|truncate 42}</a></div>{.end}{.end}
+      {.excerpt?}
+        <div class="body entry-content">{excerpt} <a class="read-more" href="{fullUrl}">Read More</a></div>
+      {.or}
+        {.section body}<div class="body entry-content">{@}</div>{.end}
+        {.passthrough?}{.or}{.section sourceUrl}<div class="body entry-source">Source: <a href="{sourceUrl}" target="_blank">{sourceUrl|truncate 42}</a></div>{.end}{.end}
+      {.end}
+      
     {.end}
-
 
     <!--POST FOOTER-->
 
