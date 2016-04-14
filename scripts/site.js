@@ -106,23 +106,32 @@ Y.use('node', 'squarespace-dynamic-data', 'history-hash', function(Y) {
         img.setAttribute('data-load', 'true');
         ImageLoader.load(img, true);
       });
+      checkForMoreContent(newPage);
+    };
+
+    var getNextPage = function(url) {
+      Y.Data.get({
+        url: url,
+        responseFormat: 'raw',
+        failure: function(err) {
+          console.log(err);
+        },
+        success: function(data) {
+          appendContent(data);
+        }.bind(this)
+      });
+    };
+
+    var checkForMoreContent = function(context) {
+      var nextPage = context.querySelector('nav.pagination .older-posts');
+      if (nextPage) {
+        var url = nextPage.getAttribute('href');
+        getNextPage(url);
+      }
     }
 
     if (body.hasClass('collection-type-blog') && body.hasClass('view-list')) {
-      var nextPage = Y.one('nav.pagination .older-posts');
-      if (nextPage) {
-        var url = nextPage.getAttribute('href');
-        Y.Data.get({
-          url: url,
-          responseFormat: 'raw',
-          failure: function(err) {
-            console.log(err);
-          },
-          success: function(data) {
-            appendContent(data);
-          }.bind(this)
-        });
-      }
+      checkForMoreContent(document.body);
     }
 
 
