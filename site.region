@@ -13,7 +13,7 @@
 {.if template.mobileStylesEnabled}{.or}<!-- Mobile Styles Disabled -->{.end}
 <body class="{squarespace.page-classes}{.section website}{.section logoImageUrl} logo-image{.or} site-title{.end}{.end}" id="{squarespace.page-id}">
 
-  <div id="canvas" data-collection-type="{collection.typeName}">
+  <div id="canvas">
 
     <div id="mobileNav" class="">
       <div class="wrapper">
@@ -98,7 +98,7 @@
       {.end}
     {.end}
 
-    <section id="page" class="clear" role="main" data-content-field="main-content" data-collection-id="{collection.id}" data-collection-type="{collection.typeName}" data-collection-id="{collection.id}"{.equal? collection.typeName "page"} data-edit-main-image="Banner"{.end}{.equal? collection.typeName "index"} data-edit-main-image="Banner"{.end}{.equal? collection.typeName "events"} data-edit-main-image="Banner"{.end}{.equal? collection.typeName "blog"} data-edit-main-image="Banner"{.end} >
+    <section id="page" class="clear" role="main" data-content-field="main-content" data-collection-id="{collection.id}" data-collection-id="{collection.id}"{.equal? collection.typeName "page"} data-edit-main-image="Banner"{.end}{.equal? collection.typeName "index"} data-edit-main-image="Banner"{.end}{.equal? collection.typeName "events"} data-edit-main-image="Banner"{.end}{.equal? collection.typeName "blog"} data-edit-main-image="Banner"{.end} >
 
       <!-- // CATEGORY NAV -->
       {.section collection}{.equal? typeName "products"}{.section categories}
