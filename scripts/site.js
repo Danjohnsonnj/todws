@@ -95,8 +95,35 @@ Y.use('node', 'squarespace-dynamic-data', 'history-hash', function(Y) {
     }
 
 
-    // GALLERY PAGES
+    // BLOG LIST
+    var appendContent = function(content) {
+      var newPage = Y.DOM.create(content);
+      var newArticles = [].slice.apply(newPage.querySelectorAll('.article-list article'));
+      var targetNode = document.body.querySelector('.article-list');
+      newArticles.forEach(function(item) {
+        targetNode.appendChild(item);
+        var img = item.querySelector('img[data-src]');
+        img.setAttribute('data-load', 'true');
+        ImageLoader.load(img, true);
+      });
+    }
 
+    if (body.hasClass('collection-type-blog') && body.hasClass('view-list')) {
+      var nextPage = Y.one('nav.pagination .older-posts');
+      if (nextPage) {
+        var url = nextPage.getAttribute('href');
+        Y.Data.get({
+          url: url,
+          responseFormat: 'raw',
+          failure: function(err) {
+            console.log(err);
+          },
+          success: function(data) {
+            appendContent(data);
+          }.bind(this)
+        });
+      }
+    }
 
 
     var body, bodyWidth;
