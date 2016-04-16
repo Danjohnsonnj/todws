@@ -1262,14 +1262,35 @@ img[data-src]:not([src]) { opacity: 0; }
 
 // CUSTOM
 
-.collection-type-blog.view-list .article-list {
-  .pagination {
-    display: none;
+.collection-type-blog.view-list,
+.collection-type-blog.view-item {
+
+  section#page {
+    margin-bottom: 50px;
+  }
+
+  .article-list {
+
+    .pagination {
+      display: none;
+    }
   }
 }
 
+body.view-item.collection-type-blog .other-wrapper img.thumb-image {
+  width: 100% !important;
+}
 
-.collection-type-blog.view-list .article-list {
+body.view-item.collection-type-blog .other-wrapper .sqs-block.image-block.sqs-block-image {
+  max-width: 100%;
+}
+
+body.view-item.collection-type-blog .sqs-block-summary-v2 {
+  display: none;
+}
+
+.collection-type-blog.view-list .article-list,
+.collection-type-blog.view-item .article-list {
 
   .primary-wrapper {
     article {
@@ -1311,20 +1332,8 @@ img[data-src]:not([src]) { opacity: 0; }
     }
 
     &:after {
-      background-color: @tardisBlue;
-      content: 'All episodes';
-      color: #fff;
-      display: block;
-      font-family: proxima-nova;
-      font-size: 28px;
-      font-style: italic;
-      font-weight: 600;
-      height: auto;
-      letter-spacing: 1px;
-      line-height: 1.4em;
-      padding: 20px;
-      text-transform: uppercase;
-      width: auto;
+      content: '';
+      display: none;
     }
   }
 
@@ -1334,6 +1343,25 @@ img[data-src]:not([src]) { opacity: 0; }
     .flex-direction(row);
     .flex-wrap(wrap);
     .justify-content(flex-start);
+
+    .section-header {
+      background-color: @tardisBlue;
+      color: #fff;
+      display: block;
+      .flex-shrink(0);
+      .flex-grow(0);
+      .flex-basis(100%);
+      font-family: proxima-nova;
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 600;
+      height: auto;
+      letter-spacing: 1px;
+      line-height: 1.4em;
+      padding: 20px;
+      text-transform: uppercase;
+      box-sizing: border-box;
+    }
 
     article {
       .flex-shrink(0);
@@ -1356,16 +1384,9 @@ img[data-src]:not([src]) { opacity: 0; }
         color: #fff;
       }
 
-      &:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: block;
-        background: @tardisBlue;
-        z-index: -1;
+      .sqs-layout > .sqs-row {
+        margin-left: 0;
+        margin-right: 0;
       }
 
       &:after {
@@ -1373,5 +1394,19 @@ img[data-src]:not([src]) { opacity: 0; }
         display: none;
       }
     }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      .transform(translatex(-50%));
+      display: block;
+      background: @tardisBlue;
+      z-index: -1;
+    }
+
   }
 }

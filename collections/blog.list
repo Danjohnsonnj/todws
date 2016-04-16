@@ -46,6 +46,9 @@
 {.end}
 
 <div class="other-wrapper clear">
+
+  <div class="section-header">All episodes</div>
+
   {.repeated section items}
     <article class="{@|item-classes}" id="article-{id}" data-item-id="{id}">
 

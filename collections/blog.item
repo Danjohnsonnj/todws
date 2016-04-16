@@ -73,7 +73,35 @@
   </section>
 {.end}
 
+<squarespace:query collection="podcast" limit="100">
+
+  <div class="article-list hfeed">
+
+    <div class="other-wrapper clear">
+
+      <div class="section-header">All episodes</div>
+
+      {.repeated section items}
+        <article class="{@|item-classes}" id="article-{id}" data-item-id="{id}">
+
+          <!--SPECIAL CONTENT-->
+
+          {.section promotedBlock}
+            <div class="special-content">{@}</div>
+            <div class="meta">
+              <span class="date"><time class="published" datetime="{addedOn|date %F}"><a href="{fullUrl}">{addedOn|date %B %e, %Y}</a></time></span>
+              {.section author}<span class="author"><a href="{collection.fullUrl}?author={id}" rel="author">{displayName}</a></span>{.end}
+            </div>
+          {.end}
+
+        </article>
+
+      {.end}
+    </div>
+
+  </div>
+</squarespace:query>
+
 </div><!-- /article-wrapper -->
 
 <aside id="sidebar"><squarespace:block-field id="sidebarBlocks" label="Sidebar Content" /></aside>
-
