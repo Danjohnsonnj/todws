@@ -1277,11 +1277,13 @@ img[data-src]:not([src]) { opacity: 0; }
   }
 }
 
-body.view-item.collection-type-blog .other-wrapper img.thumb-image {
+body.collection-type-blog.view-item .other-wrapper img.thumb-image,
+body.collection-type-blog.view-item article img.thumb-image {
   width: 100% !important;
 }
 
-body.view-item.collection-type-blog .other-wrapper .sqs-block.image-block.sqs-block-image {
+body.collection-type-blog.view-item article .sqs-block.image-block.sqs-block-image,
+body.collection-type-blog.view-item .other-wrapper .sqs-block.image-block.sqs-block-image {
   max-width: 100%;
 }
 
