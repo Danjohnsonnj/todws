@@ -98,8 +98,8 @@ Y.use('node', 'squarespace-dynamic-data', 'history-hash', function(Y) {
     // BLOG LIST
     var appendContent = function(content) {
       var newPage = Y.DOM.create(content);
-      var newArticles = [].slice.apply(newPage.querySelectorAll('.article-list article'));
-      var targetNode = document.body.querySelector('.article-list');
+      var newArticles = [].slice.apply(newPage.querySelectorAll('.article-list .other-wrapper article'));
+      var targetNode = document.body.querySelector('.article-list .other-wrapper');
       newArticles.forEach(function(item) {
         targetNode.appendChild(item);
         var img = item.querySelector('img[data-src]');

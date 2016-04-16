@@ -1,80 +1,68 @@
 <div class="article-list hfeed">
-
 {.repeated section items}
-  <article class="{@|item-classes}" id="article-{id}" data-item-id="{id}">
 
-    <!--POST HEADER-->
+  {.equal? @index 1}
+    <div class="primary-wrapper">
+      <article class="{@|item-classes}{.equal? @index 1} primary{.end}" id="article-{id}" data-item-id="{id}">
 
-    <header>
-      <h1 class="entry-title">
-        {.passthrough?}
-          <a href="{sourceUrl}" target="_blank">{title} <span>&rarr;</span></a>
-        {.or}
-          <a href="{fullUrl}">{title}</a>
-        {.end}
-      </h1>
-      <div class="meta">
-        <span class="date"><time class="published" datetime="{addedOn|date %F}"><a href="{fullUrl}">{addedOn|date %B %e, %Y}</a></time></span>
-        {.section author}<span class="author"><a href="{collection.fullUrl}?author={id}" rel="author">{displayName}</a></span>{.end}
-      </div>
-    </header>
+        <!--POST HEADER-->
 
-    <!--SPECIAL CONTENT-->
-
-    {.section promotedBlock}
-      <div class="special-content">{@}</div>
-    {.end}
-
-    {.equal? @index 1}
-      <!--POST BODY-->
-
-      {.excerpt?}
-        <div class="body entry-content">{excerpt} <a class="read-more" href="{fullUrl}">Read More</a></div>
-      {.or}
-        {.section body}<div class="body entry-content">{@}</div>{.end}
-        {.passthrough?}{.or}{.section sourceUrl}<div class="body entry-source">Source: <a href="{sourceUrl}" target="_blank">{sourceUrl|truncate 42}</a></div>{.end}{.end}
-      {.end}
-      
-    {.end}
-
-    <!--POST FOOTER-->
-
-    <footer class="clear">
-      <div class="meta">
-
-        {postItemInjectCode}
-
-        {.if categories || tags}
-        <div class="first meta-row{.if categories} category{.end}{.if tags} tags{.end}">
-          {.section categories}<span class="categories"><span class="categories-title">In</span> {.repeated section @}<a href="{collection.fullUrl}?category={@|url-encode}" rel="tag">{@}</a>{.alternates with}, {.end}</span>{.end}
-          {.section tags}<span class="tags"><span class="tags-title">Tags</span> {.repeated section @}<a href="{collection.fullUrl}?tag={@|url-encode}" rel="tag">{@}</a>{.alternates with}, {.end}</span>{.end}
-        </div>
-        {.end}
-
-        <div class="second meta-row">
-          {.comments?}
-            {.if websiteSettings.disqusShortname}
-              <span class="comments"><a href="{fullUrl}#comments-{id}" class="comment-link">Comment</a></span>
+        <header>
+          <h1 class="entry-title">
+            {.passthrough?}
+              <a href="{sourceUrl}" target="_blank">{title} <span>&rarr;</span></a>
             {.or}
-              {.section publicCommentCount}
-                <span class="comments"><a href="{fullUrl}#comments-{id}">{@} Comment{@|pluralize}</a></span>
-              {.or}
-                <span class="comments"><a href="{fullUrl}#comments-{id}">Comment</a></span>
-              {.end}
+              <a href="{fullUrl}">{title}</a>
             {.end}
-          {.end}
-          {@|social-button-inline}
-          {@|like-button}
-        </div>
+          </h1>
+          <div class="meta">
+            <span class="date"><time class="published" datetime="{addedOn|date %F}"><a href="{fullUrl}">{addedOn|date %B %e, %Y}</a></time></span>
+            {.section author}<span class="author"><a href="{collection.fullUrl}?author={id}" rel="author">{displayName}</a></span>{.end}
+          </div>
+        </header>
 
-      </div>
-    </footer>
+        <!--SPECIAL CONTENT-->
 
+        {.section promotedBlock}
+          <div class="special-content">{@}</div>
+          <div class="meta">
+            <span class="date"><time class="published" datetime="{addedOn|date %F}"><a href="{fullUrl}">{addedOn|date %B %e, %Y}</a></time></span>
+            {.section author}<span class="author"><a href="{collection.fullUrl}?author={id}" rel="author">{displayName}</a></span>{.end}
+          </div>
+        {.end}
 
-  </article>
+        <!--POST BODY-->
 
+        {.excerpt?}
+          <div class="body entry-content">{excerpt} <a class="read-more" href="{fullUrl}">Read More</a></div>
+        {.or}
+          {.section body}<div class="body entry-content">{@}</div>{.end}
+          {.passthrough?}{.or}{.section sourceUrl}<div class="body entry-source">Source: <a href="{sourceUrl}" target="_blank">{sourceUrl|truncate 42}</a></div>{.end}{.end}
+        {.end}
+
+      </article>
+    </div>
+  {.end}
 {.end}
 
+<div class="other-wrapper clear">
+  {.repeated section items}
+    <article class="{@|item-classes}" id="article-{id}" data-item-id="{id}">
+
+      <!--SPECIAL CONTENT-->
+
+      {.section promotedBlock}
+        <div class="special-content">{@}</div>
+        <div class="meta">
+          <span class="date"><time class="published" datetime="{addedOn|date %F}"><a href="{fullUrl}">{addedOn|date %B %e, %Y}</a></time></span>
+          {.section author}<span class="author"><a href="{collection.fullUrl}?author={id}" rel="author">{displayName}</a></span>{.end}
+        </div>
+      {.end}
+
+    </article>
+
+  {.end}
+</div>
 
 <!--PAGINATION-->
 
