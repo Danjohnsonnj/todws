@@ -1412,7 +1412,16 @@ body.view-item.collection-type-blog .sqs-block-summary-v2 {
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 640px) {
+  .collection-type-blog.view-list .article-list .primary-wrapper article header,
+  .collection-type-blog.view-item .article-list .primary-wrapper article header {
+    text-align: center;
+  }
+  
+  .collection-type-blog.view-item section#page {
+    margin-top: 50px;
+  }
+
   body.collection-type-blog.view-item article .sqs-block.image-block.sqs-block-image {
     max-width: 100%;
   }
