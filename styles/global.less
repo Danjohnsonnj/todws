@@ -1289,6 +1289,25 @@ body.collection-type-blog.view-item .other-wrapper .sqs-block.image-block.sqs-bl
 body.view-item.collection-type-blog .sqs-block-summary-v2 {
   display: none;
 }
+.collection-type-blog.view-list,
+.collection-type-blog.view-item {
+  article {
+    .image-caption {
+      display: block;
+      padding-left: 17px;
+      padding-right: 17px;
+
+      p {
+        .body-font;
+        margin: 3.6em 0;
+      }
+    }
+  }
+}
+
+.blog-grid-image {
+  padding: 5px 0;
+}
 
 .collection-type-blog.view-list .article-list,
 .collection-type-blog.view-item .article-list {
@@ -1301,17 +1320,6 @@ body.view-item.collection-type-blog .sqs-block-summary-v2 {
       margin-left: 0;
       margin-right: 0;
       margin-bottom: 0;
-
-      .image-caption {
-        display: block;
-        padding-left: 17px;
-        padding-right: 17px;
-
-        p {
-          .body-font;
-          margin: 0 3.6em;
-        }
-      }
 
       .body.entry-content {
         display: block;

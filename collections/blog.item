@@ -81,22 +81,8 @@
 
       <div class="section-header">All episodes</div>
 
-      {.repeated section items}
-        <article class="{@|item-classes}" id="article-{id}" data-item-id="{id}">
+      {@|apply blog-list-grid.block}
 
-          <!--SPECIAL CONTENT-->
-
-          {.section promotedBlock}
-            <div class="special-content">{@}</div>
-            <!-- <div class="meta">
-              <span class="date"><time class="published" datetime="{addedOn|date %F}"><a href="{fullUrl}">{addedOn|date %B %e, %Y}</a></time></span>
-              {.section author}<span class="author"><a href="{collection.fullUrl}?author={id}" rel="author">{displayName}</a></span>{.end}
-            </div> -->
-          {.end}
-
-        </article>
-
-      {.end}
     </div>
 
   </div>
