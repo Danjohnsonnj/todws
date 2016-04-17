@@ -23,22 +23,26 @@
 
         <!--SPECIAL CONTENT-->
 
-        {.section promotedBlock}
+        <a href="{fullUrl}" title="{title}" alt="{title}"><img class="blog-grid-image" data-src="{assetUrl}" data-image-dimensions="{originalSize}" data-load="true" /></a>
+        <div class="body entry-content">{excerpt}</div>
+        {.section body}<div class="body entry-content">{@}</div>{.end}
+
+        <!-- {.section promotedBlock}
           <div class="special-content">{@}</div>
           <div class="meta">
             <span class="date"><time class="published" datetime="{addedOn|date %F}"><a href="{fullUrl}">{addedOn|date %B %e, %Y}</a></time></span>
             {.section author}<span class="author"><a href="{collection.fullUrl}?author={id}" rel="author">{displayName}</a></span>{.end}
           </div>
-        {.end}
+        {.end} -->
 
         <!--POST BODY-->
 
-        {.excerpt?}
+        <!-- {.excerpt?}
           <div class="body entry-content">{excerpt} <a class="read-more" href="{fullUrl}">Read More</a></div>
         {.or}
           {.section body}<div class="body entry-content">{@}</div>{.end}
           {.passthrough?}{.or}{.section sourceUrl}<div class="body entry-source">Source: <a href="{sourceUrl}" target="_blank">{sourceUrl|truncate 42}</a></div>{.end}{.end}
-        {.end}
+        {.end} -->
 
       </article>
     </div>
