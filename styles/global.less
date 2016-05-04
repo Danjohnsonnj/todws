@@ -1310,7 +1310,8 @@ body.view-item.collection-type-blog .sqs-block-summary-v2 {
 }
 
 .collection-type-blog.view-list .article-list,
-.collection-type-blog.view-item .article-list {
+.collection-type-blog.view-item .article-list,
+.collection-type-page {
 
   .primary-wrapper {
     article {
@@ -1337,6 +1338,17 @@ body.view-item.collection-type-blog .sqs-block-summary-v2 {
         display: block;
         text-align: left;
         max-width: 100%;
+        padding: 1.5em;
+        margin-top: 0;
+        background-color: @tardisBlue;
+
+        * {
+          color: white;
+        }
+      }
+
+      .blog-grid-image {
+        padding-top: 0;
       }
 
       .special-content + .meta {

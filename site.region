@@ -119,6 +119,25 @@
 
       {squarespace.main-content}
 
+      {.section collection}
+        {.collectionTypeNameEquals? page}
+          <squarespace:query collection="podcast" limit="100">
+
+            <div class="article-list hfeed">
+
+              <div class="other-wrapper clear">
+
+                <div class="section-header">All episodes</div>
+
+                {@|apply blog-list-grid.block}
+
+              </div>
+
+            </div>
+          </squarespace:query>
+        {.end}
+      {.end}
+
     </section>
 
     <squarespace:block-field id="{squarespace.page-id}" columns="12" label="{collection.title} Footer Content" />
