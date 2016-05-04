@@ -7,6 +7,10 @@
     <!--POST HEADER-->
 
     <header>
+      <div class="meta">
+        <span class="date"><time class="published" datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time></span>
+        {.section author}<span class="author"><a href="{collection.fullUrl}?author={id}" rel="author">{displayName}</a></span>{.end}
+      </div>
   		<h1 class="entry-title">
         {.passthrough?}
           <a href="{sourceUrl}" target="_blank">{title} <span>&rarr;</span></a>
@@ -14,10 +18,6 @@
           <a href="{fullUrl}">{title}</a>
         {.end}
       </h1>
-      <div class="meta">
-        <span class="date"><time class="published" datetime="{addedOn|date %F}">{addedOn|date %B %e, %Y}</time></span>
-        {.section author}<span class="author"><a href="{collection.fullUrl}?author={id}" rel="author">{displayName}</a></span>{.end}
-      </div>
     </header>
 
     <!--SPECIAL CONTENT-->

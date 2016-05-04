@@ -1323,6 +1323,14 @@ body.view-item.collection-type-blog .sqs-block-summary-v2 {
 
       .body.entry-content {
         display: block;
+
+        .sqs-block:not(.sqs-block-audio) {
+          display: none;
+        }
+      }
+
+      .excerpt.entry-content {
+        display: block;
       }
 
       header {
@@ -1419,6 +1427,14 @@ body.view-item.collection-type-blog .sqs-block-summary-v2 {
     }
 
   }
+}
+
+footer .site-copyright {
+  text-align: center;
+  font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  padding: 30px 0;
 }
 
 @media all and (max-width: 767px) {
