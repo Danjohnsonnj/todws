@@ -1277,10 +1277,14 @@ img[data-src]:not([src]) { opacity: 0; }
   }
 }
 
-body.collection-type-blog.view-item .other-wrapper img.thumb-image {
+body.collection-type-blog.view-item .other-wrapper img.thumb-image,
+body.view-item.collection-type-blog img.thumb-image {
   width: 100% !important;
 }
 
+body.view-item.collection-type-blog .sqs-gallery-block-stacked .image-wrapper {
+  margin-bottom: 5px;
+}
 
 body.collection-type-blog.view-item .other-wrapper .sqs-block.image-block.sqs-block-image {
   max-width: 100%;
