@@ -10,7 +10,6 @@
 </head>
 {.if template.mobileStylesEnabled}{.or}<!-- Mobile Styles Disabled -->{.end}
 <body class="{squarespace.page-classes}{.section website}{.section logoImageUrl} logo-image{.or} site-title{.end}{.end}" id="{squarespace.page-id}">
-
   <div id="canvas">
 
     <div id="mobileNav" class="">
@@ -73,13 +72,15 @@
 
     </header>
 
-    <div class="page-divider top-divider">
-      <div class="site-tag-line">
-        {.section website}
-          {.if siteTagLine}<span>{siteTagLine}</span>{.end}
-        {.end}
+    {.section website}
+      {.if siteTagLine}
+      <div class="page-divider top-divider">
+        <div class="site-tag-line">
+          <span>{siteTagLine}</span>
+        </div>
       </div>
-    </div>
+      {.end}
+    {.end}
 
     <!-- // page image or divider -->
     {.section collection}
@@ -162,7 +163,7 @@
   </div>
 
   <div></div>
-  
+
   <squarespace:script src="site-bundle.js" combo="false"/>
 
   {squarespace-footers}
