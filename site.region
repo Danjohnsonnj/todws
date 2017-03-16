@@ -7,8 +7,6 @@
   <meta name="viewport" content="initial-scale=1">
   {.end}
   {squarespace-headers}
-  <squarespace:script src="dynamic-data.js" combo="false"/>
-  <squarespace:script src="site.js" combo="false"/>
 </head>
 {.if template.mobileStylesEnabled}{.or}<!-- Mobile Styles Disabled -->{.end}
 <body class="{squarespace.page-classes}{.section website}{.section logoImageUrl} logo-image{.or} site-title{.end}{.end}" id="{squarespace.page-id}">
@@ -164,6 +162,8 @@
   </div>
 
   <div></div>
+  
+  <squarespace:script src="site-bundle.js" combo="false"/>
 
   {squarespace-footers}
 

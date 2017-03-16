@@ -1,0 +1,27 @@
+{
+  "name": "montauk-framework",
+  "version": "1.0.2",
+  "description": "Montauk Framework",
+  "license": "Private",
+  "scripts": {
+    "authserver": "npm run server -- --auth",
+    "build": "squarespace assemble && webpack",
+    "clean": "squarespace clean",
+    "deploy": "squarespace deploy $npm_config_sqs_site_url/template.git",
+    "start": "squarespace setup && (npm run watch & npm run server)",
+    "server": "squarespace runserver $npm_config_sqs_site_url -d $PWD/build",
+    "watch": "squarespace assemble --watch & webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.nyc.squarespace.net:7999/tmp/montauk-framework.git"
+  },
+  "dependencies": {
+    "@sqs/core": "0.1.6",
+    "@sqs/video-background": "0.2.20"
+  },
+  "devDependencies": {
+    "@sqs/toolbelt": "^0.6.1",
+    "webpack": "^2.0.0"
+  }
+}

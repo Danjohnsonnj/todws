@@ -1277,6 +1277,18 @@ img[data-src]:not([src]) { opacity: 0; }
   }
 }
 
+body.collection-type-blog.view-item .sqs-gallery.sqs-gallery-design-grid .image-slide-anchor {
+  background-color: fade(@tardisBlue, 10%);
+  position: relative;
+  padding-bottom: 75% !important;
+  height: auto;
+
+  img.thumb-image {
+    min-width: 100%;
+    position: absolute !important;
+  }
+}
+
 body.collection-type-blog.view-item .other-wrapper img.thumb-image,
 body.view-item.collection-type-blog .sqs-gallery-block-stacked img.thumb-image {
   width: 100% !important;
