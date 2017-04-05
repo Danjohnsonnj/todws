@@ -17,11 +17,11 @@
     "url": "ssh://git@stash.nyc.squarespace.net:7999/tmp/montauk-framework.git"
   },
   "dependencies": {
-    "@sqs/core": "0.1.6",
-    "@sqs/video-background": "0.2.20"
+    "@squarespace/core": "^1.0.1",
+    "@squarespace/video-background": "1.0.2"
   },
   "devDependencies": {
-    "@sqs/toolbelt": "^0.6.1",
+    "@squarespace/toolbelt": "^0.8.4",
     "webpack": "^2.0.0"
   }
 }
