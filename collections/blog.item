@@ -31,6 +31,17 @@
     {.section body}<div class="body entry-content">{@}</div>{.end}
     {.passthrough?}{.or}{.section sourceUrl}<div class="body entry-source">Source: <a href="{sourceUrl}" target="_blank">{sourceUrl|truncate 42}</a></div>{.end}{.end}
 
+    <!--POST GALLERY-->
+    {.section customContent}
+      <div class="blog-gallery-wrapper">
+        {.repeated section altImage}
+          <div class="image-wrapper content-fill">
+            <img src="{assetUrl}?format=100w" data-full-src="{assetUrl}" data-image-dimensions="{originalSize}" data-image-focal-point="{mediaFocalPoint.x},{mediaFocalPoint.y}" alt="{title}">
+          </div>
+        {.end}
+      </div>
+    {.end}
+
 
     <!--POST FOOTER-->
 

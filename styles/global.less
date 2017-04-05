@@ -2106,3 +2106,59 @@ margin-bottom: 10px;
     transform: rotateZ(45deg);
   }
 }
+
+// GIF Gallery
+.collection-type-blog article .blog-gallery-wrapper {
+  max-width: 80%;
+  margin: 20px auto;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .image-wrapper {
+    flex: 0 1 calc(~'33.333% - 40px');
+    padding-bottom: calc(~'25% - 40px');
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: @tardisBlue;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(50, 50, 50, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  &.loading img {
+    opacity: 0;
+  }
+
+  img {
+    width: 90vmin;
+    height: 67.5vmin;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+  }
+}

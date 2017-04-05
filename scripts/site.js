@@ -344,4 +344,33 @@ Y.use('node', 'squarespace-dynamic-data', 'history-hash', function(Y) {
     });
   }
 
+  function viewImage() {
+    var canvas = document.getElementById('canvas');
+    var lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.classList.add('loading');
+    lightbox.addEventListener('click', function(evt) {
+      var lb = event.currentTarget;
+      lb.parentElement.removeChild(lb);
+    }, { once: true });
+
+    imageToView = this.cloneNode();
+    imageToView.setAttribute('data-src', imageToView.getAttribute('data-full-src'));
+    imageToView.setAttribute('src', '');
+    imageToView.addEventListener('load', function() {
+      this.classList.remove('loading')
+    }.bind(lightbox), { once: true });
+    lightbox.appendChild(imageToView);
+    canvas.appendChild(lightbox);
+    setTimeout(function() {
+      ImageLoader.load(this.querySelector('img'), {load: true});
+      this.style.opacity = 1;
+    }.bind(lightbox), 10);
+  }
+
+  var gifs = Array.from(document.body.querySelectorAll('.collection-type-blog article .blog-gallery-wrapper img'));
+  gifs.forEach(function(img) {
+    img.addEventListener('click', viewImage.bind(img));
+  });
+
 });
