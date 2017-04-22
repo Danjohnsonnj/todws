@@ -1,7 +1,7 @@
 {
-  "name": "montauk-framework",
+  "name": "TODWS",
   "version": "1.0.2",
-  "description": "Montauk Framework",
+  "description": "The Old Doctor Who Show",
   "license": "Private",
   "scripts": {
     "authserver": "npm run server -- --auth",
@@ -13,8 +13,7 @@
     "watch": "squarespace assemble --watch & webpack --watch"
   },
   "repository": {
-    "type": "git",
-    "url": "ssh://git@stash.nyc.squarespace.net:7999/tmp/montauk-framework.git"
+    "type": "git"
   },
   "dependencies": {
     "@squarespace/core": "^1.0.1",
