@@ -344,40 +344,60 @@ Y.use('node', 'squarespace-dynamic-data', 'history-hash', function(Y) {
     });
   }
 
+  function clickHandler(evt) {
+    if (evt.target.id !== 'lightbox' && !evt.target.classList.contains('close')) {
+      return false;
+    }
+    var lb = this;
+    lb.style.opacity = 0;
+    setTimeout(function() {
+      this.removeEventListener('click', this.boundClickHandler);
+      this.parentElement.removeChild(this);
+    }.bind(lb), 300);
+  };
+
   function viewImage(img) {
     var canvas = document.getElementById('canvas');
     var lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
     lightbox.classList.add('loading');
-    lightbox.addEventListener('click', function(evt) {
-      var lb = event.currentTarget;
-      lb.style.opacity = 0;
-      setTimeout(function() {
-        this.parentElement.removeChild(this);
-      }.bind(lb), 300);
-    }, { once: true });
+    lightbox.boundClickHandler = clickHandler.bind(lightbox);
+    lightbox.addEventListener('click', lightbox.boundClickHandler, false);
+
+    var imagePreview = img.cloneNode();
+    imagePreview.classList.add('preview');
+    lightbox.appendChild(imagePreview);
 
     var imageToView = img.cloneNode();
     imageToView.setAttribute('data-src', imageToView.getAttribute('data-full-src'));
     imageToView.setAttribute('src', '');
+    imageToView.classList.add('full');
     imageToView.addEventListener('load', function() {
       this.classList.remove('loading')
     }.bind(lightbox), { once: true });
 
-    var closeButton = document.createElement('a');
+    var closeButton = document.createElement('div');
     closeButton.classList.add('close');
-    closeButton.innerHTML = 'close';
 
     var loader = document.createElement('div');
     loader.classList.add('loader');
+    loader.classList.add('tardis');
+
+    var download = document.createElement('a');
+    download.classList.add('download');
+    download.setAttribute('alt', 'Download this GIF');
+    download.setAttribute('href', imageToView.getAttribute('data-full-src'));
+    download.setAttribute('target', '_blank');
+    download.innerText = 'Download';
 
     lightbox.appendChild(imageToView);
     lightbox.appendChild(closeButton);
     lightbox.appendChild(loader);
+    lightbox.appendChild(download);
     canvas.appendChild(lightbox);
 
     setTimeout(function() {
-      ImageLoader.load(this.querySelector('img'), {load: true});
+      ImageLoader.load(this.querySelector('img.full'), { load: true });
       this.style.opacity = 1;
     }.bind(lightbox), 10);
   }
