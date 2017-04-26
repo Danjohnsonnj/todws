@@ -1,3 +1,5 @@
+var createHistory = require('history').createBrowserHistory;
+
 Y.use('node', 'squarespace-dynamic-data', 'history-hash', function(Y) {
 
   Y.on('domready', function() {
@@ -344,24 +346,49 @@ Y.use('node', 'squarespace-dynamic-data', 'history-hash', function(Y) {
     });
   }
 
-  function clickHandler(evt) {
+  // Blog
+
+  if (document.getElementById('page').querySelector('.blog-gallery-wrapper')) {
+    var history = createHistory();
+    if (history.location.hash !== '') {
+      var imageName = history.location.hash.replace('#', '');
+      var image = document.body.querySelector('img[data-full-src$="' + imageName + '"]');
+      if (image) {
+        viewImage(image);
+      }
+    }
+  }
+
+  function closeLightbox(evt) {
     if (evt.target.id !== 'lightbox' && !evt.target.classList.contains('close')) {
       return false;
     }
     var lb = this;
     lb.style.opacity = 0;
+    history.replace({
+      hash: ''
+    }, {});
     setTimeout(function() {
       this.removeEventListener('click', this.boundClickHandler);
       this.parentElement.removeChild(this);
     }.bind(lb), 300);
   };
 
+  function getImageName(img) {
+    var path = img.getAttribute('data-full-src');
+    return path.slice(path.lastIndexOf('/') + 1);
+  }
+
   function viewImage(img) {
+    var imageName = getImageName(img);
+    history.push({
+      hash: imageName
+    }, {});
     var canvas = document.getElementById('canvas');
     var lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
     lightbox.classList.add('loading');
-    lightbox.boundClickHandler = clickHandler.bind(lightbox);
+    lightbox.boundClickHandler = closeLightbox.bind(lightbox);
     lightbox.addEventListener('click', lightbox.boundClickHandler, false);
 
     var imagePreview = img.cloneNode();

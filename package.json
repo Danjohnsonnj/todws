@@ -17,7 +17,8 @@
   },
   "dependencies": {
     "@squarespace/core": "^1.0.1",
-    "@squarespace/video-background": "1.0.2"
+    "@squarespace/video-background": "1.0.2",
+    "history": "^4.6.1"
   },
   "devDependencies": {
     "@squarespace/toolbelt": "^0.8.4",
