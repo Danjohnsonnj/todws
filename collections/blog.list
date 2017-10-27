@@ -1,10 +1,13 @@
 <div class="article-list hfeed">
+
 {.repeated section items}
 
   {.equal? @index 1}
     <div class="primary-wrapper">
 
       <article class="{@|item-classes}{.equal? @index 1} primary{.end}" id="article-{id}" data-item-id="{id}">
+
+        {@|apply announcement.block}
 
         <!--POST HEADER-->
 

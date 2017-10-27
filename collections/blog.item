@@ -4,6 +4,9 @@
 
   <article class="{@|item-classes}" id="article-{id}" data-item-id="{id}">
 
+    {@|apply announcement.block}
+
+
     <!--POST HEADER-->
 
     <header>
